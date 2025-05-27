@@ -183,6 +183,7 @@ It is our intention that all subsequent changes to this software are made availa
 
 `poetry run tap-shopify --config config.json --catalog products_catalog.json > products_output.jsonl`
 
+
 ---
 
 Copyright &copy; 2022 Matatika
