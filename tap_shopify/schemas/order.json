@@ -125,13 +125,13 @@
         "additionalProperties": true,
         "properties": {
           "code": {
-            "type": "string"
+            "type": ["string", "null"]
           },
           "amount": {
-            "type": "string"
+            "type": ["string", "null"]
           },
           "type": {
-            "type": "string"
+            "type": ["string", "null"]
           }
         }
       }
@@ -233,7 +233,7 @@
           },
           "pre_tax_price_set": {
             "$ref": "#/definitions/money_set"
-          },
+          }, 
           "tax_code": {
             "type": ["string", "null"]
           },
@@ -303,10 +303,14 @@
       "additionalProperties": true
     },
     "payment_gateway_names": {
-      "type": "array",
+      "type": ["array", "null"],
       "items": {
         "type": ["string", "null"]
       }
+    },
+    "payment_terms": {
+      "type": ["object", "null"],
+      "additionalProperties": true
     },
     "phone": {
       "type": ["string", "null"]
@@ -331,7 +335,45 @@
       "type": "array",
       "items": {
         "type": "object",
-        "additionalProperties": true
+        "additionalProperties": true,
+        "properties": {
+          "id": {
+            "type": ["integer", "null"]
+          },
+          "admin_graphql_api_id": {
+            "type": ["string", "null"]
+          },
+          "created_at": {
+            "type": ["string", "null"],
+            "format": "date-time"
+          },
+          "note": {
+            "type": ["string", "null"]
+          },
+          "order_id": {
+            "type": ["integer", "null"]
+          },
+          "processed_at": {
+            "type": ["string", "null"],
+            "format": "date-time"
+          },
+          "refund_line_items": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "restock": {
+            "type": ["boolean", "null"]
+          },
+          "total_duties_set": {
+            "$ref": "#/definitions/money_set"
+          },
+          "user_id": {
+            "type": ["integer", "null"]
+          }
+        }
       }
     },
     "shipping_address": {
