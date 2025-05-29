@@ -8,6 +8,32 @@
               "null"
           ]
       },
+      "payment_terms": {
+          "type": [
+              "string",
+              "null"
+          ]
+      },
+      "tax_exempt": {
+        "type": "boolean"
+      },
+      "discount_applications": {
+        "type": "array"
+      },
+      "fulfillments": {
+        "type": "array"
+      },
+      "shipping_lines": {
+        "type": "array",
+        "items": {
+            "type": "object",
+            "properties": {
+                "is_removed": {
+                    "type": "boolean"
+                }
+            }
+        }
+      },
       "admin_graphql_api_id": {
           "type": [
               "string",
@@ -410,7 +436,36 @@
           ]
       },
       "line_items": {
-          "type": ["string","null"]
+          "type": "array",
+          "items": {
+              "type": "object",
+              "properties": {
+                  "attributed_staffs": {
+                      "type": ["array", "null"]
+                  },
+                  "current_quantity": {
+                      "type": ["integer", "null"]
+                  },
+                  "pre_tax_price": {
+                      "type": ["string", "null"]
+                  },
+                  "pre_tax_price_set": {
+                      "type": ["object", "null"]
+                  },
+                  "tax_code": {
+                      "type": ["string", "null"]
+                  },
+                  "tax_lines": {
+                      "type": ["array", "null"]
+                  },
+                  "duties": {
+                      "type": ["array", "null"]
+                  },
+                  "discount_allocations": {
+                      "type": ["array", "null"]
+                  }
+              }
+          }
       },
       "location_id": {
           "type": [
